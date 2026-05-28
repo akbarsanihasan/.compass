@@ -160,9 +160,9 @@ bindsym --to-code --inhibited {
 
     $mod+Space exec $bin_path/rofi_launcher
     $mod+Slash exec $bin_path/rofi_calc
-    $mod+SHIFT+Slash exec $bin_path/rofi_emoji
+    $mod+SHIFT+Slash exec $bin_path/rofi_notification_log
     $mod+Period exec $bin_path/rofi_cliphist
-    $mod+SHIFT+Period exec $bin_path/rofi_notification_log
+    $mod+SHIFT+Period exec $bin_path/rofi_emoji
 }
 bindsym $mod+SHIFT+Delete exec $bin_path/lock
 bindsym $mod+SHIFT+Escape exec \

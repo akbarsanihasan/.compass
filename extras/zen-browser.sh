@@ -9,5 +9,4 @@ if ! command -v yay &>/dev/null; then
 fi
 
 yay -S --noconfirm zen-browser-bin
-
 xdg-settings set default-web-browser zen.desktop

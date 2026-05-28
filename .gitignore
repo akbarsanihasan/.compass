@@ -3,6 +3,7 @@
 
 *.log
 
+/.config/nvim
 /.config/btop/themes
 /.config/tmux/theme
 /.config/mpv/watch_later
