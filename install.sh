@@ -7,7 +7,7 @@ set -euo pipefail
 [[ -f /etc/os-release ]] && . /etc/os-release
 
 if [[ $ID != "arch" ]]; then
-        echo "OS not detected as archlinux"
+	echo "OS not detected as archlinux"
 	exit 1
 fi
 

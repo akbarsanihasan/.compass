@@ -10,7 +10,7 @@ if [[ "$selected" == "" ]]; then
 	findir=("$PWD")
 fi
 if [[ "$selected" == "global" ]]; then
-	findir=("$HOME" "/run/media" "/media")
+	findir=("$HOME" "/run/media" "/media", "/mnt")
 fi
 
 if [[ ${#findir[@]} -gt 0 ]]; then

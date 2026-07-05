@@ -6,13 +6,15 @@ mkdir -p "$HOME"/.config
 mkdir -p "$HOME"/.local/bin
 mkdir -p "$HOME"/.local/share
 
-sudo pacman -S --noconfirm --needed git fd
+sudo pacman -S --noconfirm --needed git fd dconf
 
+mkdir $HOME/.config
 fd . "$PWD"/.config --max-depth 1 --exec rm -rf "$HOME"/.config/{/}
 fd . "$PWD"/.config --max-depth 1 --exec ln -svfn {} "$HOME"/.config/{/}
 
-fd . "$PWD"/.local/bin --max-depth 1 --exec rm -rf "$HOME"/.local/bin/{/}
-fd . "$PWD"/.local/bin --max-depth 1 --exec ln -svfn {} "$HOME"/.local/bin/{/}
+mkdir -p $HOME/.bin
+fd . "$PWD"/.bin --max-depth 1 --exec rm -rf "$HOME"/.bin/{/}
+fd . "$PWD"/.bin --max-depth 1 --exec ln -svfn {} "$HOME"/.bin/{/}
 
 rm -rf "$HOME"/wallpaper.png
 ln -svfn "$PWD"/wallpaper.png "$HOME"/wallpaper.png

@@ -2,20 +2,8 @@
 
 clear
 
-core=(
-	tmux
-	fzf
-	btop
-	trash-cli
-)
-apps=(
-	foot
-	firefox
-	chromium
-	mpv
-	flameshot
-	blanket
-)
+core=(tmux fzf btop trash-cli)
+apps=(foot firefox chromium mpv flameshot)
 dependencies=(
 	vlc-plugins-all
 	gvfs-mtp
@@ -25,26 +13,8 @@ dependencies=(
 	tumbler
 	ffmpegthumbnailer
 	webp-pixbuf-loader
-	dconf
 )
-utilities=(
-	coreutils
-	fd
-	jq
-	ripgrep
-	gawk
-	less
-	curl
-	wget
-	tar
-	zip
-	unzip
-	unrar
-	p7zip
-	man
-	tldr
-)
+utilities=(coreutils fd jq ripgrep gawk less curl wget tar zip unzip unrar p7zip man tldr)
 
 sudo pacman -S --noconfirm --needed "${core[@]}" "${apps[@]}" "${dependencies[@]}" "${utilities[@]}"
 xdg-settings set default-web-browser firefox.desktop
-dconf load /com/rafaelmardojai/Blanket/ <./blanket.dconf

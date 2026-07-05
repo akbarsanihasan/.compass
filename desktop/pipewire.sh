@@ -3,17 +3,17 @@
 clear
 
 packages=(
-    pipewire
-    pipewire-audio
-    pipewire-pulse
-    pipewire-alsa
-    pipewire-jack
-    wireplumber
-    rtkit
+	pipewire
+	pipewire-audio
+	pipewire-pulse
+	pipewire-alsa
+	pipewire-jack
+	wireplumber
+	rtkit
 )
 
 if pacman -Q jack2 &>/dev/null; then
-    sudo pacman -Rddns --noconfirm jack2
+	sudo pacman -Rddns --noconfirm jack2
 fi
 sudo pacman -S --needed --noconfirm "${packages[@]}"
 

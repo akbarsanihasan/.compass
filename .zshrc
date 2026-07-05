@@ -9,15 +9,8 @@ compinit
 
 #---------- Plugins ----------#
 export ZSH="$HOME/.local/share/oh-my-zsh"
-plugins=(
-    zsh-autosuggestions 
-    zsh-syntax-highlighting 
-    zsh-completions 
-    vi-mode 
-    git 
-    archlinux
-)
 ZSH_THEME=robbyrussell
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions vi-mode git archlinux)
 source $ZSH/oh-my-zsh.sh
 
 
@@ -38,21 +31,21 @@ fi
 #---------- Keybinds ----------#
 tsessionaizer() {
     zle -I
-    BUFFER="$HOME/.local/bin/tmux_sessionaizer"
+    BUFFER="tmux_sessionaizer"
     zle accept-line
 }
 zle -N tsessionaizer
 
 tsessionaizer_global() {
     zle -I
-    BUFFER="$HOME/.local/bin/tmux_sessionaizer global"
+    BUFFER="tmux_sessionaizer global"
     zle accept-line
 }
 zle -N tsessionaizer_global
 
 tsessionaizer_main() {
     zle -I
-    BUFFER="$HOME/.local/bin/tmux_sessionaizer main"
+    BUFFER="tmux_sessionaizer main"
     zle accept-line
 }
 zle -N tsessionaizer_main
@@ -66,6 +59,7 @@ fi
 
 #---------- Path ----------#
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # NodeJS
 export NPM_CONFIG_CACHE=$HOME/.node

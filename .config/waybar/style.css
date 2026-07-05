@@ -26,30 +26,40 @@ window#waybar {
 
 window#waybar > box {
   background-color: @crust;
-  border-top: 0.1rem solid @surface0;
+  border: 0.06rem solid @surface0;
 }
 
-#workspaces {
-  margin-right: 0.4rem;
+#custom-power {
+  color: @crust;
+  background: @lavender;
+  min-width: 0;
+  padding: 0 0.4rem;
+  font-size: 0.85rem;
 }
 
 #workspaces button {
-  background: @lavender;
+  opacity: 0.5;
 }
 
-#workspaces button label {
-  color: @crust;
-  min-width: 0;
+#workspaces button:hover {
+  background: @surface0;
 }
 
-#window label {
-  font-weight: 800;
+#workspaces button.focused {
+  opacity: 1;
+}
+
+#workspaces button.focused label {
+  font-weight: bold;
 }
 
 #cpu,
 #disk,
 #temperature,
-#memory,
+#memory {
+  padding: 0 0.5rem;
+}
+
 #network.downspeed,
 #network.upspeed {
   padding: 0 0.35rem;

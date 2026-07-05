@@ -20,7 +20,4 @@ export XMODIFIERS=@im=fcitx
 export QT_IM_MODULES="wayland;fcitx;ibus"
 
 export MOZ_ENABLE_WAYLAND=1
-
 export ELECTRON_OZONE_PLATFORM_HINT=auto
-
-export CALIBRE_USE_SYSTEM_THEME=true

@@ -15,22 +15,8 @@ core=(
 	xdg-desktop-portal-wlr
 	xdg-desktop-portal-gtk
 )
-panels=(
-	waybar
-	dunst
-	rofi
-	pavucontrol
-	blueman
-	network-manager-applet
-)
-apps=(
-	thunar
-	file-roller
-	okular
-	ristretto
-	mousepad
-	gparted
-)
+panels=(waybar dunst rofi pavucontrol blueman network-manager-applet)
+apps=(thunar file-roller okular ristretto mousepad gparted)
 dependencies=(
 	dconf
 	xdg-user-dirs
