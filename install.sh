@@ -31,7 +31,6 @@ source ./desktop/common.sh
 source ./desktop/neovim.sh
 source ./desktop/ime.sh
 source ./desktop/udiskie.sh
-source ./desktop/nerdfonts.sh
 source ./desktop/theme.sh
 source ./desktop/sddm.sh
 

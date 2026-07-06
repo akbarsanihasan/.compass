@@ -4,7 +4,7 @@ clear
 
 current_dir=$PWD
 
-fonts=(inter-font ttf-dejavu ttf-liberation noto-fonts-emoji)
+fonts=(inter-font ttf-dejavu ttf-liberation noto-fonts-emoji ttf-jetbrains-mono-nerd)
 theme=(make dconf sassc nwg-look kvantum-qt5 qt5-wayland adwaita-cursors)
 
 sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
@@ -12,7 +12,8 @@ sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
 fc-cache -vf
 
 REPOS=(
-	vinceliuice/Colloid-gtk-theme
+	# vinceliuice/Colloid-gtk-theme
+	akbarsanihasan/Colloid-gtk-theme
 	catppuccin/Kvantum
 	PapirusDevelopmentTeam/papirus-icon-theme
 )
@@ -33,6 +34,7 @@ cd /tmp/gtk-theme
 	--size compact \
 	--libadwaita system \
 	--tweaks catppuccin black
+# --tweaks catppuccin black sharp
 
 mkdir -p "$HOME"/.config/Kvantum
 cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum

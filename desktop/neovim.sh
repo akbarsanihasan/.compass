@@ -15,4 +15,6 @@ sudo pacman -S --noconfirm --needed neovim \
 
 sudo pacman -S --noconfirm --needed npm go
 
-git clone https://github.com/akbarsanihasan/neovimrc $HOME/.config/nvim
+if ! [[ -d $HOME/.config/nvim ]]; then
+	git clone https://github.com/akbarsanihasan/neovimrc $HOME/.config/nvim
+fi

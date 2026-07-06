@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-sudo rm -rf /tmp/yay
-git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
+sudo pacman -S --noconfirm --needed git github-cli glab
 
-makepkg -sri --noconfirm -D /tmp/yay
+git config --global user.name akbarsanihasan
+git config --global user.email akbarsanihasan.pro@gmail.com
+git config --global push.autoSetupRemote true
+git config --global safe.directory '*'
+git config --global helpers.credential store
+git config --global init.defaultBranch main
+git config --global rerere.enabled true
+git config --global column.ui auto
+git config --global branch.sort -committerdate
+
+sudo pacman -S --noconfirm git base-devel
