@@ -12,7 +12,7 @@ sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
 fc-cache -vf
 
 REPOS=(
-	akbarsanihasan/Colloid-gtk-theme
+	vinceliuice/Colloid-gtk-theme
 	catppuccin/Kvantum
 	PapirusDevelopmentTeam/papirus-icon-theme
 )
@@ -32,7 +32,7 @@ cd /tmp/gtk-theme
 	--color dark \
 	--size compact \
 	--libadwaita system \
-	--tweaks catppuccin black sharp
+	--tweaks catppuccin black
 
 mkdir -p "$HOME"/.config/Kvantum
 cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum

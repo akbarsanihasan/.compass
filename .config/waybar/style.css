@@ -26,7 +26,8 @@ window#waybar {
 
 window#waybar > box {
   background-color: @crust;
-  border: 0.06rem solid @surface0;
+  border-top: 0.06rem solid @surface0;
+  border-bottom: 0.06rem solid @surface0;
 }
 
 #custom-power {

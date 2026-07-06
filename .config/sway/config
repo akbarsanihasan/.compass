@@ -6,7 +6,7 @@ set $mod Mod4
 set $term foot
 set $browser firefox
 set $email thunderbird
-set $wallpaper_path time
+set $wallpaper_path $HOME/wallpaper.png
 set $bin_path $HOME/.bin
 
 set $term_workspace 1
@@ -44,6 +44,8 @@ exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DES
 exec dbus-update-activation-environment --all
 exec $bin_path/xdg_desktop_portal
 
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec $bin_path/wallpaper apply $wallpaper_path
 exec brightnessctl --save
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
@@ -51,10 +53,10 @@ exec wl-paste --type image --watch cliphist store
 exec waybar
 exec swaync
 exec $bin_path/idle daemon
-exec $bin_path/polkit
 
-exec blueman-applet
 exec fcitx5
+exec blueman-applet
+exec firewall-applet
 exec nm-applet --indicator
 exec udiskie -t --appindicator
 
@@ -86,9 +88,6 @@ focus_on_window_activation smart
 focus_wrapping no
 workspace_layout default
 workspace_auto_back_and_forth no
-
-output "*" bg ~/wallpaper.png fill
-output Virtual-1 res 1440x900
 
 input "type:keyboard" {
     xkb_layout us
