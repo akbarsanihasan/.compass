@@ -51,7 +51,6 @@ exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 
 exec waybar
-exec swaync
 exec $bin_path/idle daemon
 
 exec fcitx5
@@ -59,9 +58,6 @@ exec blueman-applet
 exec firewall-applet
 exec nm-applet --indicator
 exec udiskie -t --appindicator
-
-exec $term
-exec $browser
 
 gaps inner 6
 gaps outer 0
