@@ -4,10 +4,10 @@ daemon() {
 	swayidle -w \
 		timeout 300 'brightnessctl set 5%' \
 		resume "brightnessctl -r" \
-		timeout 450 "$HOME/.local/bin/lock &" \
+		timeout 450 "$HOME/.bin/lock &" \
 		timeout 900 "swaymsg 'output * dpms off'" \
 		resume "swaymsg 'output * dpms on'" \
-		before-sleep "$HOME/.local/bin/lock"
+		before-sleep "$HOME/.bin/lock"
 }
 
 icon() {
