@@ -33,8 +33,8 @@ cd /tmp/gtk-theme
 	--color dark \
 	--size compact \
 	--libadwaita system \
-	--tweaks catppuccin black
-# --tweaks catppuccin black sharp
+	--tweaks catppuccin black sharp
+# --tweaks catppuccin black
 
 mkdir -p "$HOME"/.config/Kvantum
 cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum
