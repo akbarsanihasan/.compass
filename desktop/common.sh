@@ -16,5 +16,9 @@ dependencies=(
 )
 utilities=(coreutils fd jq ripgrep gawk less curl wget tar zip unzip unrar p7zip man tldr)
 
-sudo pacman -S --noconfirm --needed "${core[@]}" "${apps[@]}" "${dependencies[@]}" "${utilities[@]}"
+sudo pacman -S --noconfirm --needed "${core[@]}" \
+	"${apps[@]}" \
+	"${dependencies[@]}" \
+	"${utilities[@]}"
+
 xdg-settings set default-web-browser firefox.desktop
