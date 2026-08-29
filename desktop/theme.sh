@@ -5,7 +5,7 @@ clear
 current_dir=$PWD
 
 fonts=(inter-font ttf-dejavu ttf-liberation noto-fonts-emoji ttf-jetbrains-mono-nerd)
-theme=(make dconf sassc nwg-look kvantum-qt5 qt5-wayland adwaita-cursors)
+theme=(make dconf sassc nwg-look kvantum kvantum-qt5 qt5-wayland adwaita-cursors)
 
 sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
 
