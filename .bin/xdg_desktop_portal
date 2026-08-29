@@ -6,7 +6,7 @@ pkill -f xdg-desktop-portal
 pkill -f xdg-desktop-portal-gtk
 pkill -f xdg-desktop-portal-kde
 
-/usr/lib/xdg-desktop-portal-wlr &
-/usr/lib/xdg-desktop-portal-gtk &
-/usr/lib/xdg-desktop-portal-kde &
-/usr/lib/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal-wlr &
+/usr/libexec/xdg-desktop-portal-gtk &
+/usr/libexec/xdg-desktop-portal-kde &
+/usr/libexec/xdg-desktop-portal &

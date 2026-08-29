@@ -42,14 +42,14 @@ sudo dnf install -y rofi-devel qalculate meson libtool automake autoconf cairo-d
 	cd /tmp/rofi-calc/
 	meson setup build
 	meson compile -C build/
-	sudo meson install
+	sudo meson install -C build
 )
 
 [[ -d /tmp/rofi-emoji ]] || git clone https://github.com/Mange/rofi-emoji.git /tmp/rofi-emoji
 (
 	cd /tmp/rofi-emoji
 	autoreconf -i
-	mkdir build
+	mkdir -p build
 	cd build
 	../configure
 	make

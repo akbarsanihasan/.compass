@@ -5,7 +5,7 @@ clear
 current_dir=$PWD
 
 fonts=(rsms-inter-fonts dejavu-fonts-all liberation-fonts google-noto-emoji-fonts)
-theme=(make dconf sassc kvantum-qt5 qt5-qtwayland adwaita-cursor-theme)
+theme=(make dconf sassc kvantum kvantum-qt5 qt5-qtwayland adwaita-cursor-theme)
 
 sudo dnf install -y wget "${fonts[@]}" "${theme[@]}"
 wget -O /tmp/jetbrainsmono.tar.xz https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
