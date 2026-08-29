@@ -2,7 +2,7 @@
 
 clear
 
-sudo dnf install -y tlp
+sudo dnf install -y tlp tlp-rdw
 
 sudo mkdir -p /etc/tlp.d
 
@@ -25,4 +25,4 @@ sudo tee /etc/tlp.d/20-profile.conf <<-EOF
 	CPU_BOOST_ON_BAT=0
 EOF
 
-sudo systemctl enable tlp
+sudo systemctl enable tlp --now

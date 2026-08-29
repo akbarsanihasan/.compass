@@ -2,7 +2,7 @@
 
 clear
 
-sudo dnf install -y bluez bluez-obex bluez-utils
+sudo dnf install -y bluez bluez-obexd bluez-tools
 
 if grep -qEi "^#.*Experimental.*=.*" /etc/bluetooth/main.conf; then
 	sudo sed -i 's/^#\s*Experimental.*=.*/Experimental = true/' /etc/bluetooth/main.conf

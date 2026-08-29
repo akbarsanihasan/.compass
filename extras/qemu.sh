@@ -3,7 +3,7 @@
 clear
 
 sudo dnf install -y \
-	qemu-full \
+	qemu \
 	libvirt \
 	virt-manager \
 	virt-viewer \
@@ -11,7 +11,7 @@ sudo dnf install -y \
 	bridge-utils \
 	dmidecode \
 	swtpm \
-	openbsd-netcat \
+	netcat \
 	iptables \
 	nftables \
 	libguestfs \
