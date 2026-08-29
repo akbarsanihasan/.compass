@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-pkill rofi || rofi -show drun -eh 2 -config "$HOME/.config/rofi/launcher.rasi"

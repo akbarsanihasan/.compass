@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-pkill rofi || rofi -show calc \
-	-config "$HOME/.config/rofi/calculator.rasi" |
-	wl-copy

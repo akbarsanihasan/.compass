@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-pkill rofi || cliphist list |
-    rofi -dmenu \
-        -p "" \
-        -display-columns 2 \
-        -config "$HOME/.config/rofi/cliphist.rasi" |
-    cliphist decode |
-    wl-copy
