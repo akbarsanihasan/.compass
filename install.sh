@@ -6,7 +6,7 @@ set -euo pipefail
 
 [[ -f /etc/os-release ]] && . /etc/os-release
 
-if [[ $ID != "arch" ]]; then
+if [[ $ID != "fedora" ]]; then
 	echo "OS not detected as archlinux"
 	exit 1
 fi
@@ -23,8 +23,6 @@ timestamp_sudo_pid=$!
 trap "sudo -k; kill -9 $timestamp_sudo_pid 2>/dev/null;" EXIT SIGINT SIGTERM
 
 source ./desktop/git.sh
-source ./desktop/aur.sh
-source ./desktop/neovim.sh
 source ./desktop/pipewire.sh
 source ./desktop/filesystem.sh
 source ./desktop/firewall.sh

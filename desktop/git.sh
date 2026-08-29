@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo pacman -S --noconfirm --needed git github-cli glab
+sudo dnf install -y git gh glab
 
 git config --global user.name akbarsanihasan
 git config --global user.email akbarsanihasan.pro@gmail.com
@@ -11,5 +11,3 @@ git config --global init.defaultBranch main
 git config --global rerere.enabled true
 git config --global column.ui auto
 git config --global branch.sort -committerdate
-
-sudo pacman -S --noconfirm git base-devel

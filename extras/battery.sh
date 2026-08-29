@@ -2,7 +2,7 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed tlp
+sudo dnf install -y tlp
 
 sudo mkdir -p /etc/tlp.d
 

@@ -2,8 +2,8 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed neovim \
-	lua51 \
+sudo dnf install -y \
+	compat-lua \
 	luarocks \
 	tree-sitter-cli \
 	git \
@@ -13,7 +13,7 @@ sudo pacman -S --noconfirm --needed neovim \
 	tar \
 	gzip
 
-sudo pacman -S --noconfirm --needed npm go
+sudo dnf install -y npm go
 
 if ! [[ -d $HOME/.config/nvim ]]; then
 	git clone https://github.com/akbarsanihasan/neovimrc $HOME/.config/nvim

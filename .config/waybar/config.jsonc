@@ -1,6 +1,7 @@
 {
   "layer": "bottom",
   "position": "top",
+  "output": ["eDP-1", "Lenovo Group Limited L24-4C URHRVBXD"],
   "reload_style_on_change": true,
   "modules-left": ["custom/power", "sway/workspaces"],
   "modules-center": [],

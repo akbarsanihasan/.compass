@@ -2,7 +2,7 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed udiskie libappindicator
+sudo dnf install -y udiskie libappindicator
 
 sudo mkdir -p /etc/tmpfiles.d/
 echo -e "D /media 0755 root root 0 -" | sudo tee /etc/tmpfiles.d/media.conf

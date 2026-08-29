@@ -16,9 +16,10 @@ dependencies=(
 )
 utilities=(coreutils fd jq ripgrep gawk less curl wget tar zip unzip unrar p7zip man tldr)
 
-sudo pacman -S --noconfirm --needed "${core[@]}" \
+sudo dnf install -y \
+	"${core[@]}" \
 	"${apps[@]}" \
 	"${dependencies[@]}" \
 	"${utilities[@]}"
 
-xdg-settings set default-web-browser firefox.desktop
+xdg-settings set default-web-browser org.mozilla.firefox.desktop

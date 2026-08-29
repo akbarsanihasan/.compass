@@ -2,7 +2,7 @@
 
 clear
 
-sudo pacman -Sy --noconfirm \
+sudo dnf install -y \
 	qemu-full \
 	libvirt \
 	virt-manager \

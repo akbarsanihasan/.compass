@@ -6,7 +6,7 @@ mkdir -p "$HOME"/.config
 mkdir -p "$HOME"/.bin
 mkdir -p "$HOME"/.local/share
 
-sudo pacman -S --noconfirm --needed git fd dconf
+sudo dnf install -y git fd dconf
 
 fd . "$PWD"/.config --max-depth 1 --exec rm -rf "$HOME"/.config/{/}
 fd . "$PWD"/.config --max-depth 1 --exec ln -svfn {} "$HOME"/.config/{/}

@@ -2,11 +2,11 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed sddm \
+sudo dnf install -y sddm \
 	unzip \
-	qt6-svg \
-	qt6-declarative \
-	qt5-quickcontrols2
+	qt6-qtsvg \
+	qt6-qtdeclarative \
+	qt5-qtquickcontrols2
 
 VERSION=v1.1.0
 THEME_FLAVOUR=catppuccin-mocha

@@ -7,7 +7,7 @@ if ! getent group docker; then
 fi
 sudo usermod -aG docker "$USER"
 
-sudo pacman -S --noconfirm --needed \
+sudo dnf install -y \
 	docker \
 	docker-compose \
 	docker-buildx

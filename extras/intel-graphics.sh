@@ -2,7 +2,7 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed mesa \
+sudo dnf install -y mesa \
 	vulkan-intel \
 	intel-media-driver \
 	libva-intel-driver \

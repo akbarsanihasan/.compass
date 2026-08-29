@@ -4,9 +4,7 @@ clear
 
 core=(
 	zsh
-	wayland
-	xorg-xwayland
-	xorg-xhost
+	xhost
 	sway
 	swayidle
 	swaybg
@@ -24,26 +22,45 @@ dependencies=(
 	grim
 	gvfs
 	gammastep
-	polkit-gnome
+	xfce-polkit
 	libnotify
 	brightnessctl
 	playerctl
-	rofi-calc
-	rofi-emoji
 	cliphist
 )
 
-sudo pacman -S --noconfirm --needed "${core[@]}" \
+sudo dnf install -y "${core[@]}" \
 	"${panels[@]}" \
 	"${apps[@]}" \
 	"${dependencies[@]}"
 
 sudo chsh -s "$(command -v zsh)" "$USER"
+sudo dnf install -y rofi-devel qalculate meson libtool automake autoconf cairo-devel
+
+[[ -d /tmp/rofi-calc ]] || git clone https://github.com/svenstaro/rofi-calc.git /tmp/rofi-calc
+(
+	cd /tmp/rofi-calc/
+	meson setup build
+	meson compile -C build/
+	sudo meson install
+)
+
+[[ -d /tmp/rofi-emoji ]] || git clone https://github.com/Mange/rofi-emoji.git /tmp/rofi-emoji
+(
+	cd /tmp/rofi-emoji
+	autoreconf -i
+	mkdir build
+	cd build
+	../configure
+	make
+	sudo make install
+)
+
 sudo usermod $USER -aG input
 
-mkdir -p $HOME/.config/qalculate
-
 dconf write /org/gnome/desktop/wm/preferences/button-layout "':'"
+
+mkdir -p $HOME/.config/qalculate
 
 /usr/bin/xdg-user-dirs-update
 mkdir -p "$HOME"/.config/gtk-3.0

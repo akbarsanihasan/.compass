@@ -2,9 +2,10 @@
 
 clear
 
-sudo pacman -S --noconfirm --needed iptables \
+sudo dnf install -y iptables \
 	nftables \
 	firewalld \
 	firewall-config \
 	firewall-applet
+
 sudo systemctl enable firewalld

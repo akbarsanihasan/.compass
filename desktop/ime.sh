@@ -8,9 +8,9 @@ packages=(
 	fcitx5-mozc
 	fcitx5-hangul
 	fcitx5-configtool
-	noto-fonts-cjk
+	google-noto-sans-cjk-fonts
 )
-sudo pacman -S --noconfirm --needed "${packages[@]}"
+sudo dnf install -y "${packages[@]}"
 
 if ! [[ -d /tmp/fcitx-theme ]]; then
 	git clone --depth 1 https://github.com/catppuccin/fcitx5.git /tmp/fcitx-theme

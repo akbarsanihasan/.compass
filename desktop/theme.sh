@@ -4,11 +4,13 @@ clear
 
 current_dir=$PWD
 
-fonts=(inter-font ttf-dejavu ttf-liberation noto-fonts-emoji ttf-jetbrains-mono-nerd)
-theme=(make dconf sassc nwg-look kvantum-qt5 qt5-wayland adwaita-cursors)
+fonts=(rsms-inter-fonts dejavu-fonts-all liberation-fonts google-noto-emoji-fonts)
+theme=(make dconf sassc kvantum-qt5 qt5-qtwayland adwaita-cursor-theme)
 
-sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
-
+sudo dnf install -y wget "${fonts[@]}" "${theme[@]}"
+wget -O /tmp/jetbrainsmono.tar.xz https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+mkdir -p $HOME/.local/share/fonts/JetBrainsMonoNerd
+tar -xf /tmp/jetbrainsmono.tar.xz -C $HOME/.local/share/fonts/JetBrainsMonoNerd
 fc-cache -vf
 
 REPOS=(

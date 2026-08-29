@@ -40,14 +40,14 @@ set $base #1e1e2e
 set $mantle #181825
 set $crust #11111b
 
-output "Lenovo Group Limited L24-4C URHRVBXD" mode 1920x1080@144Hz
-output "XXX HDMI 1322131231233" transform 90 pos 0 1920 
+output "Lenovo Group Limited L24-4C URHRVBXD" pos 0 0 mode 1920x1080@144Hz 
+output DP-2 pos 1920 0 transform 270 
 
 exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 exec dbus-update-activation-environment --all
 exec $bin_path/xdg_desktop_portal
 
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/libexec/xfce-polkit
 exec $bin_path/wallpaper apply $wallpaper_path
 exec brightnessctl --save
 exec wl-paste --type text --watch cliphist store
