@@ -31,4 +31,5 @@ sudo tee /etc/sddm.conf <<-EOF
 	Session=sway
 EOF
 
+sudo systemctl set-default graphical.target
 sudo systemctl enable sddm
