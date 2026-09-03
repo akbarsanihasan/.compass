@@ -58,8 +58,8 @@ fi
 
 
 #---------- Path ----------#
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # NodeJS
 export NPM_CONFIG_CACHE=$HOME/.node

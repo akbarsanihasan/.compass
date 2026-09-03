@@ -7,7 +7,7 @@ set $term foot
 set $browser firefox
 set $email thunderbird
 set $wallpaper_path $HOME/wallpaper.png
-set $bin_path $HOME/.bin
+set $bin_path $HOME/.local/bin
 
 set $term_workspace 1
 set $email_workspace 5
@@ -42,6 +42,8 @@ set $crust #11111b
 
 output "Lenovo Group Limited L24-4C URHRVBXD" pos 0 0 mode 1920x1080@144Hz 
 output DP-2 pos 1920 0 transform 270 
+
+workspace $browser_workspace output DP-2
 
 exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 exec dbus-update-activation-environment --all
@@ -115,8 +117,6 @@ input "type:touchpad" {
     accel_profile flat
     pointer_accel 0.15
 }
-
-workspace $browser_workspace output DP-2
 
 bindsym --to-code --inhibited {
     $mod+E layout toggle split tabbed

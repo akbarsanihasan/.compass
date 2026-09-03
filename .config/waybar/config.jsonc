@@ -89,7 +89,7 @@
   },
   "custom/swayidle": {
     "format": "<span>{}</span>",
-    "exec": "~/.bin/idle icon",
+    "exec": "~/.local/bin/idle icon",
     "exec-if": "bash -c 'which swayidle &>/dev/null'",
     "signal": 9,
   },
@@ -120,7 +120,7 @@
   },
   "custom/battery": {
     "format": "<span><big>{icon}</big></span> <span rise='0.8pt'>{text}%</span>",
-    "exec": "~/.bin/battery wayindicator",
+    "exec": "~/.local/bin/battery wayindicator",
     "format-icons": ["", "", "", "", ""],
     "return-type": "json",
     "interval": 8,
@@ -131,8 +131,8 @@
     "menu": "on-click",
     "menu-file": "~/.config/waybar/battery-menu.xml",
     "menu-actions": {
-      "tshd-start": "~/.bin/battery tshd start",
-      "tshd-stop": "~/.bin/battery tshd stop",
+      "tshd-start": "~/.local/bin/battery tshd start",
+      "tshd-stop": "~/.local/bin/battery tshd stop",
     },
   },
   "clock": {
