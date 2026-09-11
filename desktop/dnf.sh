@@ -6,7 +6,7 @@ clear
 
 sudo tee -a /etc/dnf/dnf.conf <<-EOF
 	fastestmirror=True
-	max_parallel_downloads=10
+	max_parallel_downloads=$(nproc)
 	keepcache=True
 EOF
 
