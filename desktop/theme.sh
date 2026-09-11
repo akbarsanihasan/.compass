@@ -2,16 +2,7 @@
 
 clear
 
-current_dir=$PWD
-
-fonts=(rsms-inter-fonts dejavu-fonts-all liberation-fonts google-noto-emoji-fonts)
 theme=(make dconf sassc kvantum kvantum-qt5 qt5-qtwayland adwaita-cursor-theme)
-
-sudo dnf install -y wget "${fonts[@]}" "${theme[@]}"
-wget -O /tmp/jetbrainsmono.tar.xz https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-mkdir -p $HOME/.local/share/fonts/JetBrainsMonoNerd
-tar -xf /tmp/jetbrainsmono.tar.xz -C $HOME/.local/share/fonts/JetBrainsMonoNerd
-fc-cache -vf
 
 REPOS=(
 	# vinceliuice/Colloid-gtk-theme
@@ -28,22 +19,26 @@ for i in "${!REPOS[@]}"; do
 	fi
 done
 
-mkdir -p "$HOME"/.local/share/themes
-cd /tmp/gtk-theme
-./install.sh --dest "$HOME"/.local/share/themes \
-	--theme default \
-	--color dark \
-	--size compact \
-	--libadwaita system \
-	--tweaks catppuccin black sharp
-# --tweaks catppuccin black
+(
+	mkdir -p "$HOME"/.local/share/themes
+	cd /tmp/gtk-theme
+	./install.sh --dest "$HOME"/.local/share/themes \
+		--theme default \
+		--color dark \
+		--size compact \
+		--libadwaita system \
+		--tweaks catppuccin black sharp
+	# --tweaks catppuccin black
+)
 
-mkdir -p "$HOME"/.config/Kvantum
-cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum
-tee "$HOME"/.config/Kvantum/kvantum.kvconfig <<-EOF
-	[General]
-	theme=catppuccin-mocha-blue
-EOF
+(
+	mkdir -p "$HOME"/.config/Kvantum
+	cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum
+	tee "$HOME"/.config/Kvantum/kvantum.kvconfig <<-EOF
+		[General]
+		theme=catppuccin-mocha-blue
+	EOF
+)
 
 cd /tmp/icon-pack
 make install PREFIX="$HOME"/.local
@@ -54,5 +49,3 @@ dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Catppu
 dconf write /org/gnome/desktop/wm/preferences/theme "'Colloid-Dark-Compact-Catppuccin'"
 dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
-
-cd "$current_dir"

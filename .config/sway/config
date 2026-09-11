@@ -40,8 +40,8 @@ set $base #1e1e2e
 set $mantle #181825
 set $crust #11111b
 
-output "Lenovo Group Limited L24-4C URHRVBXD" pos 0 0 mode 1920x1080@144Hz 
-output DP-2 pos 1920 0 transform 270 
+output "Lenovo Group Limited L24-4C URHRVBXD" pos 0 0 mode 1920x1080@144Hz transform 0
+# output DP-2 pos 1920 0 transform 270 
 
 workspace $browser_workspace output DP-2
 
@@ -58,11 +58,12 @@ exec wl-paste --type image --watch cliphist store
 exec waybar
 exec $bin_path/idle daemon
 
-exec fcitx5
 exec blueman-applet
 exec firewall-applet
 exec nm-applet --indicator
 exec udiskie -t --appindicator
+exec fcitx5
+exec flameshot
 
 gaps inner 6
 gaps outer 0
@@ -232,5 +233,6 @@ for_window [app_id="flameshot"] {
     border pixel 0
     floating enable
     fullscreen disable
+    sticky enable
     move absolute position 0 0
 }
