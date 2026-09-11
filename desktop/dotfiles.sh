@@ -3,7 +3,7 @@
 clear
 
 mkdir -p "$HOME"/.config
-mkdir -p "$HOME"/.bin
+mkdir -p "$HOME"/.local/bin
 mkdir -p "$HOME"/.local/share
 
 sudo pacman -S --noconfirm --needed git fd dconf
@@ -11,8 +11,8 @@ sudo pacman -S --noconfirm --needed git fd dconf
 fd . "$PWD"/.config --max-depth 1 --exec rm -rf "$HOME"/.config/{/}
 fd . "$PWD"/.config --max-depth 1 --exec ln -svfn {} "$HOME"/.config/{/}
 
-fd . "$PWD"/.bin --max-depth 1 --exec rm -rf "$HOME"/.bin/{/}
-fd . "$PWD"/.bin --max-depth 1 --exec ln -svfn {} "$HOME"/.bin/{/}
+fd . "$PWD"/.local/bin --max-depth 1 --exec rm -rf "$HOME"/.bin/{/}
+fd . "$PWD"/.local/bin --max-depth 1 --exec ln -svfn {} "$HOME"/.bin/{/}
 
 rm -rf "$HOME"/wallpaper.png
 ln -svfn "$PWD"/wallpaper.png "$HOME"/wallpaper.png

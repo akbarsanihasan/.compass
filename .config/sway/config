@@ -7,7 +7,7 @@ set $term foot
 set $browser firefox
 set $email thunderbird
 set $wallpaper_path $HOME/wallpaper.png
-set $bin_path $HOME/.bin
+set $bin_path $HOME/.local/bin
 
 set $term_workspace 1
 set $email_workspace 5
