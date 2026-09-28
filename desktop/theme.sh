@@ -13,6 +13,8 @@ REPOS=(
 VERSIONS=(main main 20250201)
 DOWNLOAD_PATH=(gtk-theme qt-theme icon-pack)
 
+sudo dnf install -y $theme
+
 for i in "${!REPOS[@]}"; do
 	if ! [[ -d /tmp/"${DOWNLOAD_PATH[$i]}" ]]; then
 		git clone --depth 1 -b "${VERSIONS[$i]}" https://github.com/"${REPOS[$i]}" /tmp/"${DOWNLOAD_PATH[$i]}"
@@ -40,8 +42,10 @@ done
 	EOF
 )
 
-cd /tmp/icon-pack
-make install PREFIX="$HOME"/.local
+(
+	cd /tmp/icon-pack
+	make install PREFIX="$HOME"/.local
+)
 
 dconf write /org/gnome/desktop/interface/cursor-theme "'Adwaita'"
 dconf write /org/gnome/desktop/interface/font-name "'Inter Display 14'"
