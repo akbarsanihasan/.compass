@@ -2,14 +2,10 @@
 
 clear
 
-current_dir=$PWD
-
 fonts=(inter-font ttf-dejavu ttf-liberation noto-fonts-emoji ttf-jetbrains-mono-nerd)
 theme=(make dconf sassc nwg-look kvantum kvantum-qt5 qt5-wayland adwaita-cursors)
 
 sudo pacman -S --noconfirm "${fonts[@]}" "${theme[@]}"
-
-fc-cache -vf
 
 REPOS=(
 	# vinceliuice/Colloid-gtk-theme
@@ -27,14 +23,16 @@ for i in "${!REPOS[@]}"; do
 done
 
 mkdir -p "$HOME"/.local/share/themes
-cd /tmp/gtk-theme
-./install.sh --dest "$HOME"/.local/share/themes \
-	--theme default \
-	--color dark \
-	--size compact \
-	--libadwaita system \
-	--tweaks catppuccin black sharp
-# --tweaks catppuccin black
+(
+	cd /tmp/gtk-theme
+	./install.sh --dest "$HOME"/.local/share/themes \
+		--theme default \
+		--color dark \
+		--size compact \
+		--libadwaita system \
+		--tweaks catppuccin black sharp
+	# --tweaks catppuccin black
+)
 
 mkdir -p "$HOME"/.config/Kvantum
 cp -R /tmp/qt-theme/themes/catppuccin-mocha-blue "$HOME"/.config/Kvantum
@@ -43,8 +41,10 @@ tee "$HOME"/.config/Kvantum/kvantum.kvconfig <<-EOF
 	theme=catppuccin-mocha-blue
 EOF
 
-cd /tmp/icon-pack
-make install PREFIX="$HOME"/.local
+(
+	cd /tmp/icon-pack
+	make install PREFIX="$HOME"/.local
+)
 
 dconf write /org/gnome/desktop/interface/cursor-theme "'Adwaita'"
 dconf write /org/gnome/desktop/interface/font-name "'Inter Display 14'"
@@ -53,4 +53,5 @@ dconf write /org/gnome/desktop/wm/preferences/theme "'Colloid-Dark-Compact-Catpp
 dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
 
-cd "$current_dir"
+systemctl --user daemon-reload
+systemctl --user enable --now sway-lid-monitor.service
