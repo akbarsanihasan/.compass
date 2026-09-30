@@ -2,8 +2,6 @@
 
 clear
 
-theme=(make dconf sassc kvantum kvantum-qt5 qt5-qtwayland adwaita-cursor-theme)
-
 REPOS=(
 	# vinceliuice/Colloid-gtk-theme
 	akbarsanihasan/Colloid-gtk-theme
@@ -13,7 +11,7 @@ REPOS=(
 VERSIONS=(main main 20250201)
 DOWNLOAD_PATH=(gtk-theme qt-theme icon-pack)
 
-sudo dnf install -y $theme
+sudo dnf install -y make dconf sassc kvantum kvantum-qt5 qt5-qtwayland adwaita-cursor-theme
 
 for i in "${!REPOS[@]}"; do
 	if ! [[ -d /tmp/"${DOWNLOAD_PATH[$i]}" ]]; then

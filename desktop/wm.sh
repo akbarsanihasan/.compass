@@ -27,6 +27,7 @@ dependencies=(
 	brightnessctl
 	playerctl
 	cliphist
+	jq
 )
 
 sudo dnf install -y "${core[@]}" \
@@ -34,8 +35,9 @@ sudo dnf install -y "${core[@]}" \
 	"${apps[@]}" \
 	"${dependencies[@]}"
 
-sudo chsh -s "$(command -v zsh)" "$USER"
 sudo dnf install -y rofi-devel qalculate meson libtool automake autoconf cairo-devel
+
+sudo chsh -s "$(command -v zsh)" "$USER"
 
 [[ -d /tmp/rofi-calc ]] || git clone https://github.com/svenstaro/rofi-calc.git /tmp/rofi-calc
 (
