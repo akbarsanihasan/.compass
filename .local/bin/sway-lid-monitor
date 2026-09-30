@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+set -u
+
+# Dynamically find the ACPI lid state.
+LID_STATE="$(find /proc/acpi/button/lid -mindepth 2 -maxdepth 2 \
+	-name state -print -quit 2>/dev/null)"
+
+if [[ -z "$LID_STATE" || ! -f "$LID_STATE" ]]; then
+	echo "No ACPI lid state found"
+	exit 1
+fi
+
+# Dynamically find the internal laptop display.
+INTERNAL_OUTPUT="$(swaymsg -t get_outputs -r |
+	jq -r '.[] | select(.name | startswith("eDP-")) | .name' | head -n1)"
+
+if [[ -z "$INTERNAL_OUTPUT" ]]; then
+	echo "No internal eDP display found"
+	exit 1
+fi
+
+set_output() {
+	local state
+	state="$(awk '{print $2}' "$LID_STATE")"
+
+	case "$state" in
+	closed)
+		swaymsg output "$INTERNAL_OUTPUT" disable
+		;;
+	open)
+		swaymsg output "$INTERNAL_OUTPUT" enable
+		;;
+	esac
+}
+
+# Apply the current state immediately.
+set_output
+
+# Watch for lid state changes.
+last_state=""
+
+while true; do
+	current_state="$(awk '{print $2}' "$LID_STATE")"
+
+	if [[ "$current_state" != "$last_state" ]]; then
+		last_state="$current_state"
+		set_output
+	fi
+
+	sleep 1
+done

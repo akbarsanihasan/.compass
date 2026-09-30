@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo pacman -S --noconfirm git base-devel
+
 if ! yay --version &>/dev/null; then
 	sudo rm -rf /tmp/yay
 	git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
