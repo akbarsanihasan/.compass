@@ -3,7 +3,7 @@
 clear
 
 core=(tmux fzf btop trash-cli)
-apps=(foot firefox chromium mpv flameshot)
+apps=(foot firefox chromium vlc flameshot)
 dependencies=(
 	vlc-plugins-all
 	gvfs-mtp

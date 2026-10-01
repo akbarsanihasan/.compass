@@ -24,8 +24,6 @@ done
 	cd /tmp/gtk-theme
 	./install.sh --dest "$HOME"/.local/share/themes \
 		--theme default \
-		--color dark \
-		--size compact \
 		--libadwaita system \
 		--tweaks catppuccin black sharp
 	# --tweaks catppuccin black
@@ -47,7 +45,7 @@ done
 
 dconf write /org/gnome/desktop/interface/cursor-theme "'Adwaita'"
 dconf write /org/gnome/desktop/interface/font-name "'Inter Display 14'"
-dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Catppuccin'"
-dconf write /org/gnome/desktop/wm/preferences/theme "'Colloid-Dark-Compact-Catppuccin'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Catppuccin'"
+dconf write /org/gnome/desktop/wm/preferences/theme "'Colloid-Dark-Catppuccin'"
 dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"

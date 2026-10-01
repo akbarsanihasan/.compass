@@ -57,6 +57,7 @@ exec wl-paste --type image --watch cliphist store
 
 exec waybar
 exec $bin_path/idle daemon
+exec $bin_path/sway-lid-monitor daemon
 
 exec blueman-applet
 exec firewall-applet

@@ -44,6 +44,3 @@ if ! [[ -e $HOME/.config/btop/themes/catppuccin.theme ]]; then
 	git clone https://github.com/catppuccin/btop /tmp/btop-theme
 	cp /tmp/btop-theme/themes/catppuccin_mocha.theme "$HOME"/.config/btop/themes/catppuccin.theme
 fi
-
-systemctl --user daemon-reload
-systemctl --user enable --now sway-lid-monitor.service
